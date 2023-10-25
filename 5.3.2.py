@@ -43,20 +43,9 @@ def data5():
     return x_grid, y_grid, z
 
 
-x1, y1, z1 = data1()
-x2, y2, z2 = data2()
-x3, y3, z3 = data3()
-x4, y4, z4 = data4()
-x5, y5, z5 = data5()
-fgr = plt.figure()
-ax1 = fgr.add_subplot(3, 3, 1, projection='3d')
-ax2 = fgr.add_subplot(3, 3, 3, projection='3d')
-ax3 = fgr.add_subplot(3, 3, 5, projection='3d')
-ax4 = fgr.add_subplot(3, 3, 7, projection='3d')
-ax5 = fgr.add_subplot(3, 3, 9, projection='3d')
-ax1.plot_surface(x1, y1, z1, cmap='Spectral')
-ax2.plot_surface(x2, y2, z2, cmap='Spectral')
-ax3.plot_surface(x3, y3, z3, cmap='Spectral')
-ax4.plot_surface(x4, y4, z4, cmap='Spectral')
-ax5.plot_surface(x5, y5, z5, cmap='Spectral')
+data = [data1(), data2(), data3(), data4(), data5()]
+fgr = plt.figure(figsize=(12, 10))
+for i in range(5):
+    ax = fgr.add_subplot(3, 3, 2 * i + 1,  projection='3d')
+    ax.plot_surface(data[i][0], data[i][1], data[i][2], cmap='Spectral')
 plt.show()
