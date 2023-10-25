@@ -47,5 +47,6 @@ data = [data1(), data2(), data3(), data4(), data5()]
 fgr = plt.figure(figsize=(12, 10))
 for i in range(5):
     ax = fgr.add_subplot(3, 3, 2 * i + 1,  projection='3d')
+    plt.title("{}".format(i+1))
     ax.plot_surface(data[i][0], data[i][1], data[i][2], cmap='Spectral')
 plt.show()

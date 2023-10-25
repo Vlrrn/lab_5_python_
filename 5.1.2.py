@@ -1,11 +1,11 @@
-# 1.2, 5 вариант
+#           5
 #  А = (X^T * X)^(-1) * (X^T * Y)
 #  y = a0 + a1x1 + a2x2
 
 import numpy as np
 import random
 
-x = np.ones((12,1), dtype=np.int32)
+x = np.ones((12, 1), dtype=np.int32)
 x = np.concatenate((x, np.random.randint(5, 17, (12, 1)), np.random.randint(60, 82, (12, 1))), axis=1)
 print("X:\n", x)
 y = np.array([random.uniform(13.5, 18.6) for i in range(12)]).reshape(12, 1)
